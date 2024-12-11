@@ -31,6 +31,29 @@ pip install -r requirements.txt
 ```
 pip install -e ./
 ```
+## Create database
+
+Use this command only in first time for create the database, the parameters are:
+
+    -d: database name
+    -r: username
+    -w: password
+```
+odoo -d odoo -r odoo -w o --stop-after-init
+```
+or without demonstration data
+```
+odoo -d odoo -r odoo -w o --without-demo=all --stop-after-init
+```
+## Configuring the Odoo server options
+Creates a new **odoo.conf** configuration file
+```
+odoo -c odoo.conf --save --stop
+```
+### Edit **odoo.conf**
+  * db_name = odoo
+  * db_password = o
+  * db_user = odoo
 
 ## Commands and Applications
 ### Create odoo module
