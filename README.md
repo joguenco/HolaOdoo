@@ -2,20 +2,25 @@
 
 Examples for Odoo
 
-## Applications
+## Applications and Commands
+### Install odoo module
+```
+odoo -c odoo.conf -i my_module --stop-after-init
+```
 ### Hot Reload
 ```
 pip install watchdog
 ```
 Run
 ```
-odoo -c odoo.conf --dev=all -u l10n_ec_account_edi
+odoo -c odoo.conf --dev=all -u my_module
 ```
 or
 ```
-odoo -c odoo.conf --dev=reload -u om_hospital 
+odoo -c odoo.conf --dev=reload -u my_module 
 ```
 ### Pre-commit
+Run in folder where contains module or modules
 ```
 pip install pre-commit
 ```
