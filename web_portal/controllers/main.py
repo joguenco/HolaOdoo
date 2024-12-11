@@ -34,7 +34,7 @@ class Main(Home):
             Product = request.env["product.template"]
             products = Product.sudo().search([("categ_id", "=", category_id)])
         else:
-            categorie_name = "Products without category"
+            categorie_name = "No products found"
             products = False
 
         return request.render(
