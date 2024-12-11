@@ -2,6 +2,36 @@
 
 Examples for Odoo
 
+## Create python virtual environment
+```
+virtualenv venv
+```
+or
+```
+virtualenv -p python3.12 venv
+```
+or
+```
+python3.12 -m venv venv
+```
+## Activate python virtual environment
+```
+source venv/bin/activate
+```
+## Update pip and tools
+```
+pip install -U pip
+pip install --upgrade wheel
+pip install --upgrade setuptools
+```
+## Install requirements
+```
+pip install -r requirements.txt
+```
+```
+pip install -e ./
+```
+
 ## Commands and Applications
 ### Create odoo module
 ```
@@ -32,16 +62,3 @@ Run
 ```
 pre-commit run -a
 ```
-
-## Licenses
-
-This repository is licensed under [AGPL-3.0](LICENSE).
-
-However, each module can have a totally different license, as long as they adhere to Odoo Community Association (OCA)
-policy. Consult each module's `__manifest__.py` file, which contains a `license` key
-that explains its license.
-
-----
-OCA, or the [Odoo Community Association](http://odoo-community.org/), is a nonprofit
-organization whose mission is to support the collaborative development of Odoo features
-and promote its widespread use.

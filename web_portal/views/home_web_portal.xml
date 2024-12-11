@@ -1,0 +1,10 @@
+<odoo>
+  <template id="home_web_portal" name="Home">
+    <t t-call="web.frontend_layout">
+      <t t-set="title">My Home</t>
+      <div class="container">
+        <h1>My Home</h1>
+      </div>
+    </t>
+  </template>
+</odoo>

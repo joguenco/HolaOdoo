@@ -18,9 +18,9 @@ odoo_version: 18.0
 org_name: Odoo Community Association (OCA)
 org_slug: OCA
 rebel_module_groups: []
-repo_description: l10n-ecuador
-repo_name: l10n-ecuador
-repo_slug: l10n-ecuador
+repo_description: HolaOdoo
+repo_name: HolaOdoo
+repo_slug: HolaOdoo
 repo_website: https://github.com/OCA/l10n-ecuador
 use_pyproject_toml: true
 use_ruff: true
