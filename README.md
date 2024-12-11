@@ -2,7 +2,11 @@
 
 Examples for Odoo
 
-## Applications and Commands
+## Commands and Applications
+### Create odoo module
+```
+odoo scaffold my_module ./custom_addons/HolaOdoo
+```
 ### Install odoo module
 ```
 odoo -c odoo.conf -i my_module --stop-after-init
