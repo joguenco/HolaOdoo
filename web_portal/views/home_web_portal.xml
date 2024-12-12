@@ -10,7 +10,8 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Name</th>
+                            <th>Name v1</th>
+                            <th>Name v2</th>
                             <th>Parent</th>
                         </tr>
                     </thead>
@@ -20,6 +21,13 @@
                                 <td>
                                     <a
                                         t-attf-href="/hola/odoo/v1/products/category/{{category.id}}"
+                                    >
+                                        <span t-field="category.name" />
+                                    </a>
+                                </td>
+                                <td>
+                                    <a
+                                        t-attf-href="/hola/odoo/v2/products/category/{{slug(category)}}"
                                     >
                                         <span t-field="category.name" />
                                     </a>

@@ -8,7 +8,8 @@
     "license": "AGPL-3",
     "depends": ["portal"],
     "data": [
-        # 'security/ir.model.access.csv',
+        "security/ir.model.access.csv",
         "views/home_web_portal.xml",
+        "views/404.xml",
     ],
 }

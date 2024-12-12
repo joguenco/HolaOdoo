@@ -2,6 +2,10 @@
 
 Examples for Odoo
 
+## Comments
+### slug() function
+The special slug() function is used to generate a human-readable identifier for each record
+
 ## Create python virtual environment
 ```
 virtualenv venv

@@ -21,7 +21,7 @@ class Main(Home):
     @route(
         "/hola/odoo/v1/products/category/<int:category_id>", auth="public", website=True
     )
-    def products_category(self, category_id, **kwargs):
+    def products_category_v1(self, category_id, **kwargs):
         result = (
             request.env["product.category"]
             .sudo()
@@ -34,8 +34,29 @@ class Main(Home):
             Product = request.env["product.template"]
             products = Product.sudo().search([("categ_id", "=", category_id)])
         else:
-            categorie_name = "No products found"
-            products = False
+            return request.render("web_portal.404", status=404)
+
+        return request.render(
+            "web_portal.products_category_web_portal",
+            {
+                "products": products,
+                "categorie_name": categorie_name,
+            },
+        )
+
+    @route(
+        "/hola/odoo/v2/products/category/<model(product.category):category>",
+        auth="public",
+        website=True,
+    )
+    def products_category_v2(self, category, **kwargs):
+        categorie_name = f"Products of {category.name}"
+
+        products = (
+            request.env["product.template"]
+            .sudo()
+            .search([("categ_id", "=", category.id)])
+        )
 
         return request.render(
             "web_portal.products_category_web_portal",
