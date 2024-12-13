@@ -21,7 +21,7 @@ rebel_module_groups: []
 repo_description: HolaOdoo
 repo_name: HolaOdoo
 repo_slug: HolaOdoo
-repo_website: https://github.com/OCA/l10n-ecuador
+repo_website: https://github.com/joguenco/HolaOdoo
 use_pyproject_toml: true
 use_ruff: true
 

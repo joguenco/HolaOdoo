@@ -2,7 +2,7 @@
     "name": "My Web Portal",
     "summary": "My Web Portal",
     "author": "Jorge Luis,Odoo Community Association (OCA)",
-    "website": "https://github.com/OCA/l10n-ecuador",
+    "website": "https://github.com/joguenco/HolaOdoo",
     "category": "website",
     "version": "18.0.1.0.0",
     "license": "AGPL-3",

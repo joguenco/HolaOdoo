@@ -48,13 +48,13 @@ repos:
       # update the NOT INSTALLABLE ADDONS section above
       - id: oca-update-pre-commit-excluded-addons
       - id: oca-fix-manifest-website
-        args: ["https://github.com/OCA/l10n-ecuador"]
+        args: ["https://github.com/joguenco/HolaOdoo"]
       - id: oca-gen-addon-readme
         args:
           - --addons-dir=.
           - --branch=18.0
-          - --org-name=OCA
-          - --repo-name=l10n-ecuador
+          - --org-name=joguenco
+          - --repo-name=HolaOdoo
           - --if-source-changed
           - --keep-source-digest
           - --convert-fragments-to-markdown
