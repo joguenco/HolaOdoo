@@ -48,7 +48,7 @@
             <t t-set="title">Products</t>
 
             <div class="container">
-                <h2 t-out="categorie_name" />
+                <h2 t-out="category_name" />
                 <table class="table">
                     <thead>
                         <tr>

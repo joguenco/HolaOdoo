@@ -29,7 +29,7 @@ class Main(Home):
         )
 
         if result:
-            categorie_name = f"Products of {result[0]["name"]}"
+            category_name = f"Products of {result[0]["name"]}"
 
             Product = request.env["product.template"]
             products = Product.sudo().search([("categ_id", "=", category_id)])
@@ -40,7 +40,7 @@ class Main(Home):
             "web_portal.products_category_web_portal",
             {
                 "products": products,
-                "categorie_name": categorie_name,
+                "category_name": category_name,
             },
         )
 
@@ -50,7 +50,7 @@ class Main(Home):
         website=True,
     )
     def products_category_v2(self, category, **kwargs):
-        categorie_name = f"Products of {category.name}"
+        category_name = f"Products of {category.name}"
 
         products = (
             request.env["product.template"]
@@ -62,6 +62,6 @@ class Main(Home):
             "web_portal.products_category_web_portal",
             {
                 "products": products,
-                "categorie_name": categorie_name,
+                "category_name": category_name,
             },
         )
