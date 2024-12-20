@@ -1,0 +1,7 @@
+<odoo noupdate="1">
+    <record id="base.main_company" model="res.company">
+        <field name="name">Jorge Luis</field>
+        <field name="email">jorgeluis@yo.me</field>
+        <field name="website">https://joguenco.dev</field>
+    </record>
+</odoo>

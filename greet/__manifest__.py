@@ -14,6 +14,7 @@
         "views/res_country.xml",
         "views/greet_friend.xml",
         "views/greet_report.xml",
+        "views/greet_me.xml",
         "views/greet_menu.xml",
     ],
     "demo": [
