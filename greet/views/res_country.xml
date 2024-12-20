@@ -5,19 +5,23 @@
         <field name="model">res.country</field>
         <field name="arch" type="xml">
             <form edit="false" duplicate="false" delete="false">
-                <group>
-                    <field name="name" required="1" />
-                    <field name="code" required="1" />
-                    <field name="phone_code" />
-                </group>
-                <group>
-                    <field
-                        name="image_url"
-                        widget="image_url"
-                        class="oe_avatar"
-                        options="{'size': [128,128]}"
-                    />
-                </group>
+                <sheet>
+                    <group name="group_top">
+                        <group name="group_left">
+                            <field name="name" required="1" />
+                            <field name="code" required="1" />
+                            <field name="phone_code" />
+                        </group>
+                        <group name="group_right">
+                            <field
+                                name="image_url"
+                                widget="image_url"
+                                class="oe_avatar"
+                                options="{'size': [128,128]}"
+                            />
+                        </group>
+                    </group>
+                </sheet>
             </form>
         </field>
     </record>
