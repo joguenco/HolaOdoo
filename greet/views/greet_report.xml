@@ -3,7 +3,7 @@
         <field name="name">Greet Report</field>
         <field name="model">greet.greet</field>
         <field name="arch" type="xml">
-            <tree
+            <list
                 create="false"
                 edit="false"
                 duplicate="false"
@@ -12,14 +12,14 @@
             >
                 <field name="date" />
                 <field name="description" />
-            </tree>
+            </list>
         </field>
     </record>
 
     <record id="action_greet_report" model="ir.actions.act_window">
         <field name="name">Greet Report</field>
         <field name="res_model">greet.greet</field>
-        <field name="view_mode">tree</field>
+        <field name="view_mode">list</field>
         <field name="view_id" ref="view_greet_report_tree" />
     </record>
 </odoo>
