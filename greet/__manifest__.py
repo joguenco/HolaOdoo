@@ -17,7 +17,7 @@
         "views/greet_menu.xml",
     ],
     "demo": [
-        "demo/demo.xml",
+        "demo/friend.xml",
     ],
     "installable": True,
     "application": True,

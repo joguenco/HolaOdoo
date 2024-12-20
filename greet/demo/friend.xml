@@ -1,0 +1,32 @@
+<odoo noupdate="1">
+
+  <record id="res_partner_juanita" model="res.partner">
+    <field name="name">Juanita</field>
+    <field name="email">juanita@gmail.com</field>
+    <field name="country_id" ref="base.co"/>
+  </record>
+
+  <record id="greet_friend_1" model="greet.friend">
+    <field name="partner_id" ref="res_partner_juanita"/>
+  </record>
+
+  <record id="res_partner_panchito" model="res.partner">
+    <field name="name">Panchito</field>
+    <field name="email">panchito@outlook.com</field>
+    <field name="country_id" ref="base.ec"/>
+  </record>
+
+  <record id="greet_friend_2" model="greet.friend">
+    <field name="partner_id" ref="res_partner_panchito"/>
+  </record>
+
+  <record id="res_partner_lola" model="res.partner">
+    <field name="name">Lola</field>
+    <field name="email">lola@icloud.com</field>
+    <field name="country_id" ref="base.us"/>
+  </record>
+
+  <record id="greet_friend_3" model="greet.friend">
+    <field name="partner_id" ref="res_partner_lola"/>
+  </record>
+</odoo>
