@@ -25,7 +25,7 @@
         </menuitem>
 
         <menuitem
-            name="Transation"
+            name="Transaction"
             id="menu_greet_transaction"
             parent="menu_owl_greet"
             sequence="20"

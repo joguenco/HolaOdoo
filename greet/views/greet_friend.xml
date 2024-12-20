@@ -6,7 +6,7 @@
         <field name="arch" type="xml">
             <list>
                 <field name="name" />
-                <field name="nickname" />
+                <field name="email" />
             </list>
         </field>
     </record>
@@ -19,7 +19,7 @@
             <form>
                 <group>
                     <field name="name" required="1" />
-                    <field name="nickname" required="1" />
+                    <field name="email" required="1" />
                     <field name="country_id" />
                 </group>
             </form>
