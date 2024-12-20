@@ -1,8 +1,8 @@
 <odoo>
-  <data>
-    <record id="action_owl_greet_dashboard" model="ir.actions.client">
-      <field name="name">Greetings Dashboard</field>
-      <field name="tag">owl.greet_dashboard</field>
-    </record>
-  </data>
+    <data>
+        <record id="action_owl_greet_dashboard" model="ir.actions.client">
+            <field name="name">Greetings Dashboard</field>
+            <field name="tag">owl.greet_dashboard</field>
+        </record>
+    </data>
 </odoo>

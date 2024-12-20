@@ -1,36 +1,46 @@
 <templates xml:space="preserve">
   <t t-name="owl.OwlGreetDashboard" owl="1">
-    <div class="container-fluid p-3">
-      <div class="card mt-3">
-        
-        <div class="card-header">
-          <h2 t-out="state.title"/>
-        </div>
-        
-        <div class="card-body">
-          <ul class="list-group list-group-flush" t-foreach="state.information" t-as="i" t-key="i.id">
-            
-            <li class="list-group-item" t-out="i.description"/>
-            
-            <li class="list-group-item">
-              <a t-attf-href="#{i.website}" class="link-primary" t-out="i.website" target="_blank"/>
-            </li>
+        <div class="container-fluid p-3">
+            <div class="card mt-3">
+                <div class="card-header">
+                    <h2 t-out="state.title" />
+                </div>
 
-            <div class="card mt-3" style="width: 18rem;">
-              <div class="card">
-                <OwlChartRenderer title="'Odoo Modules'" data="state.countModules"/>
-              </div>
+                <div class="card-body">
+                    <ul
+                        class="list-group list-group-flush"
+                        t-foreach="state.information"
+                        t-as="i"
+                        t-key="i.id"
+                    >
+                        <li class="list-group-item" t-out="i.description" />
+
+                        <li class="list-group-item">
+                            <a
+                                t-attf-href="#{i.website}"
+                                class="link-primary"
+                                t-out="i.website"
+                                target="_blank"
+                            />
+                        </li>
+
+                        <div class="card mt-3" style="width: 18rem;">
+                            <div class="card">
+                                <OwlChartRenderer
+                                    title="'Odoo Modules'"
+                                    data="state.countModules"
+                                />
+                            </div>
+                        </div>
+
+                        <li class="list-group-item">
+                            <p class="text-center">&#60; / &#62; with &#x2665; by <span
+                                t-out="i.author"
+                            /></p>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            
-            <li class="list-group-item">
-              <p class="text-center">&#60; / &#62; with &#x2665; by <span t-out="i.author"/></p>
-            </li>
-          
-          </ul>
         </div>
-
-      </div>
-    </div>
-  </t>
+    </t>
 </templates>
-
