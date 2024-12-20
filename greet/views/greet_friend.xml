@@ -20,7 +20,10 @@
                 <group>
                     <field name="name" required="1" />
                     <field name="email" required="1" />
-                    <field name="country_id" />
+                    <field
+                        name="country_id"
+                        options="{'no_create': True, 'no_open': True}"
+                    />
                 </group>
             </form>
         </field>

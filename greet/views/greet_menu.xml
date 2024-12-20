@@ -22,6 +22,12 @@
                 action="action_greet_friend"
                 sequence="10"
             />
+            <menuitem
+                id="menu_manage_me"
+                name="Me"
+                action="action_greet_me"
+                sequence="20"
+            />
         </menuitem>
 
         <menuitem
