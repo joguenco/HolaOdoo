@@ -1,0 +1,34 @@
+<odoo>
+   <!--Tree Friend-->
+    <record id="view_greet_friend_tree" model="ir.ui.view">
+        <field name="name">Friend</field>
+        <field name="model">greet.friend</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="nickname"/>
+            </tree>
+        </field>
+    </record>
+    
+    <!--Form Friend-->
+    <record id="view_greet_friend_form" model="ir.ui.view">
+        <field name="name">Friend</field>
+        <field name="model">greet.friend</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name" required="1"/>
+                    <field name="nickname" required="1"/>
+                    <field name="country_id"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    
+    <record id="action_greet_friend" model="ir.actions.act_window">
+        <field name="name">Friend</field>
+        <field name="res_model">greet.friend</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

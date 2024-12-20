@@ -1,0 +1,52 @@
+<odoo>
+    <record id="view_greet_greet_tree" model="ir.ui.view">
+        <field name="name">Greet</field>
+        <field name="model">greet.greet</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_greet_greet_form" model="ir.ui.view">
+        <field name="name">Friend</field>
+        <field name="model">greet.greet</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="description"/>
+                    <field name="date"/>
+                    <field name="partner_id"/>
+                    <field name="id" invisible="1"/>
+                </group>
+                <notebook>
+                    <page name="greet_lines" string="Lines">
+                        <field
+                                name="line_ids"
+                                colspan="4"
+                                context="{'default_greet_id': id}"
+                        >
+                            <tree editable="bottom">
+<!--                                <field-->
+<!--                                    name="greet_id"-->
+<!--                                    domain="[('id', 'in', parent.line_ids)]"-->
+<!--                                    options="{'no_create': True}"-->
+<!--                                />-->
+                                <field name="partner_id"/>
+                                <field name="quantity"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_greet_greet" model="ir.actions.act_window">
+        <field name="name">Greet</field>
+        <field name="res_model">greet.greet</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_greet_greet_tree"/>
+    </record>
+</odoo>

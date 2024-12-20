@@ -1,0 +1,10 @@
+<templates>
+  <t t-name="owl.OwlChartRenderer" owl="1">
+    <div class="card text-center">
+      <div class="card-header">
+        <h2 t-esc="state.title"/>
+      </div>
+      <canvas t-ref="chart"/>
+    </div>
+  </t>
+</templates>

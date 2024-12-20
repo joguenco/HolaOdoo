@@ -1,0 +1,9 @@
+<odoo>
+    <!--Begin - Use as default view-->
+    <record id="action_res_country" model="ir.actions.act_window">
+        <field name="name">Country</field>
+        <field name="res_model">res.country</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!--End - Use as default view-->
+</odoo>

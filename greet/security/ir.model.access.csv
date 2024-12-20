@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+greet.access_greet_greet,access_greet_greet,greet.model_greet_greet,base.group_user,1,1,1,1
+greet.access_greet_friend,access_greet_friend,greet.model_greet_friend,base.group_user,1,1,1,1
+greet.access_greet_greet_line,access_greet_greet_line,greet.model_greet_greet_line,base.group_user,1,1,1,1
