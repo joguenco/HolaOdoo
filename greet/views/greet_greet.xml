@@ -3,9 +3,9 @@
         <field name="name">Greet</field>
         <field name="model">greet.greet</field>
         <field name="arch" type="xml">
-            <tree>
+            <list>
                 <field name="description" />
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -27,7 +27,7 @@
                             colspan="4"
                             context="{'default_greet_id': id}"
                         >
-                            <tree editable="bottom">
+                            <list editable="bottom">
                                 <!--                                <field-->
                                 <!--                                    name="greet_id"-->
                                 <!--                                    domain="[('id', 'in', parent.line_ids)]"-->
@@ -35,7 +35,7 @@
                                 <!--                                />-->
                                 <field name="partner_id" />
                                 <field name="quantity" />
-                            </tree>
+                            </list>
                         </field>
                     </page>
                 </notebook>
@@ -46,7 +46,7 @@
     <record id="action_greet_greet" model="ir.actions.act_window">
         <field name="name">Greet</field>
         <field name="res_model">greet.greet</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="view_id" ref="view_greet_greet_tree" />
     </record>
 </odoo>
