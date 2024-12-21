@@ -11,7 +11,7 @@
                 default_order="date desc"
             >
                 <field name="date" />
-                <field name="description" />
+                <field name="reason" />
             </list>
         </field>
     </record>

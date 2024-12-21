@@ -4,7 +4,7 @@
         <field name="model">greet.greet</field>
         <field name="arch" type="xml">
             <list>
-                <field name="description" />
+                <field name="reason" />
             </list>
         </field>
     </record>
@@ -15,9 +15,8 @@
         <field name="arch" type="xml">
             <form>
                 <group>
-                    <field name="description" />
                     <field name="date" />
-                    <field name="partner_id" />
+                    <field name="reason" />
                     <field name="id" invisible="1" />
                 </group>
                 <notebook>
