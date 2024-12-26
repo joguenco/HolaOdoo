@@ -1,75 +1,73 @@
 <odoo>
-    <data>
-        <menuitem name="Greetings" id="menu_owl_greet" sequence="10" />
+    <menuitem name="Greetings" id="menu_owl_greet" sequence="10" />
 
+    <menuitem
+        name="Dashboard"
+        id="menu_owl_greet_dashboard"
+        action="action_owl_greet_dashboard"
+        parent="menu_owl_greet"
+        sequence="10"
+    />
+
+    <menuitem
+        name="Manage"
+        id="menu_greet_manage"
+        parent="menu_owl_greet"
+        sequence="10"
+    >
         <menuitem
-            name="Dashboard"
-            id="menu_owl_greet_dashboard"
-            action="action_owl_greet_dashboard"
-            parent="menu_owl_greet"
+            id="menu_manage_friend"
+            name="Friend"
+            action="action_greet_friend"
             sequence="10"
         />
-
         <menuitem
-            name="Manage"
-            id="menu_greet_manage"
-            parent="menu_owl_greet"
-            sequence="10"
-        >
-            <menuitem
-                id="menu_manage_friend"
-                name="Friend"
-                action="action_greet_friend"
-                sequence="10"
-            />
-            <menuitem
-                id="menu_manage_me"
-                name="Me"
-                action="action_greet_me"
-                sequence="20"
-            />
-        </menuitem>
-
-        <menuitem
-            name="Transaction"
-            id="menu_greet_transaction"
-            parent="menu_owl_greet"
+            id="menu_manage_me"
+            name="Me"
+            action="action_greet_me"
             sequence="20"
-        >
-            <menuitem
-                id="menu_transaction_greet"
-                name="Greet"
-                action="action_greet_greet"
-                sequence="10"
-            />
-        </menuitem>
+        />
+    </menuitem>
 
+    <menuitem
+        name="Transaction"
+        id="menu_greet_transaction"
+        parent="menu_owl_greet"
+        sequence="20"
+    >
         <menuitem
-            name="Report"
-            id="menu_greet_report"
-            parent="menu_owl_greet"
-            sequence="30"
-        >
-            <menuitem
-                id="menu_report_greet"
-                name="Greet"
-                action="action_greet_report"
-                sequence="10"
-            />
-        </menuitem>
+            id="menu_transaction_greet"
+            name="Greet"
+            action="action_greet_greet"
+            sequence="10"
+        />
+    </menuitem>
 
+    <menuitem
+        name="Report"
+        id="menu_greet_report"
+        parent="menu_owl_greet"
+        sequence="30"
+    >
         <menuitem
-            name="Configuration"
-            id="menu_greet_configuration"
-            parent="menu_owl_greet"
-            sequence="90"
-        >
-            <menuitem
-                id="menu_configuration_country"
-                name="Country"
-                action="action_res_country"
-                sequence="10"
-            />
-        </menuitem>
-    </data>
+            id="menu_report_greet"
+            name="Greet"
+            action="action_greet_report"
+            sequence="10"
+        />
+    </menuitem>
+
+    <menuitem
+        name="Configuration"
+        id="menu_greet_configuration"
+        parent="menu_owl_greet"
+        sequence="90"
+    >
+        <menuitem
+            id="menu_configuration_country"
+            name="Country"
+            action="action_res_country"
+            sequence="10"
+        />
+    </menuitem>
 </odoo>
