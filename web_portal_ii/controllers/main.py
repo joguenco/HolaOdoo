@@ -9,7 +9,7 @@ class Main(Home):
         super().index(**kwargs)
 
         Category = request.env["product.category"]
-        categories = Category.sudo().search([])
+        categories = Category.sudo().search([("is_published", "=", True)])
 
         res = request.render(
             "web_portal_ii.home_web_portal",

@@ -11,10 +11,7 @@ class Product(Home):
         result = (
             request.env["product.template"]
             .sudo()
-            .search(
-                [("id", "=", product_id), ("is_published", "=", True)],
-                limit=1,
-            )
+            .search([("id", "=", product_id), ("is_published", "=", True)])
         )
 
         if result:

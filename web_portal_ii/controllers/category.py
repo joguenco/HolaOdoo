@@ -15,8 +15,17 @@ class Category(Home):
         products = (
             request.env["product.template"]
             .sudo()
-            .search([("categ_id", "=", category.id)])
+            .search(
+                [
+                    ("categ_id", "=", category.id),
+                    ("categ_id.is_published", "=", True),
+                    ("is_published", "=", True),
+                ]
+            )
         )
+
+        if not products:
+            return request.render("web_portal_ii.404", status=404)
 
         return request.render(
             "web_portal_ii.products_category_web_portal",
