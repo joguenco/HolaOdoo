@@ -12,7 +12,7 @@ class Main(Home):
         categories = Category.sudo().search([])
 
         res = request.render(
-            "web_portal.home_web_portal",
+            "web_portal_ii.home_web_portal",
             {"categories": categories},
         )
 
@@ -37,7 +37,7 @@ class Main(Home):
             return request.render("web_portal.404", status=404)
 
         return request.render(
-            "web_portal.products_category_web_portal",
+            "web_portal_ii.products_category_web_portal",
             {
                 "products": products,
                 "category_name": category_name,
@@ -59,7 +59,7 @@ class Main(Home):
         )
 
         return request.render(
-            "web_portal.products_category_web_portal",
+            "web_portal_ii.products_category_web_portal",
             {
                 "products": products,
                 "category_name": category_name,

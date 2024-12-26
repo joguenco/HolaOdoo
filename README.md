@@ -9,8 +9,8 @@ The special slug() function is used to generate a human-readable identifier for 
 ## Create python virtual environment
 ```
 virtualenv venv
-```
 or
+```
 ```
 virtualenv -p python3.12 venv
 ```
