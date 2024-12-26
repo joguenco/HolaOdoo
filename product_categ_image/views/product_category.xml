@@ -5,18 +5,20 @@
         <field name="model">product.category</field>
         <field name="inherit_id" ref="product.product_category_form_view" />
         <field name="arch" type="xml">
-
             <xpath expr="//sheet[last()]" position="after">
                 <sheet>
                     <notebook>
                         <page string="Web" name="web">
-
                             <group name="group_top">
                                 <group name="group_left">
                                     <field name="is_published" />
                                 </group>
                                 <group name="group_right">
-                                    <field name="image_1920" widget="image" class="oe_avatar w-auto float-start" />
+                                    <field
+                                        name="image_1920"
+                                        widget="image"
+                                        class="oe_avatar w-auto float-start"
+                                    />
                                 </group>
                             </group>
                         </page>

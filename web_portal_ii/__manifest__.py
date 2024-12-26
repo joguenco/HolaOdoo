@@ -9,7 +9,8 @@
     "depends": ["stock", "portal", "product_categ_image"],
     "data": [
         "security/ir.model.access.csv",
-        "views/home_web_portal.xml",
+        "views/home.xml",
+        "views/products.xml",
         "views/404.xml",
     ],
     "installable": True,

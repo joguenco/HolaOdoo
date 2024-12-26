@@ -13,7 +13,6 @@
     "website": "https://github.com/joguenco/HolaOdoo",
     "depends": ["product"],
     "excludes": ["product_default_image"],
-    "data": ["views/product_category.xml",
-             "views/product_template.xml"],
+    "data": ["views/product_category.xml", "views/product_template.xml"],
     "installable": True,
 }
