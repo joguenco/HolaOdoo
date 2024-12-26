@@ -2,11 +2,8 @@
     <template id="home_web_portal" name="Home">
         <t t-call="web.frontend_layout">
             <t t-set="title">Home</t>
+
             <div class="container">
-                <h1>Welcome to Hola Odoo</h1>
-            </div>
-            <div class="container">
-                <h2>Product Categories</h2>
                 <table class="table">
                     <thead>
                         <tr>

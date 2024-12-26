@@ -17,25 +17,3 @@ class Main(Home):
         )
 
         return res
-
-    @route(
-        "/hola/odoo/v2/products/category/<model(product.category):category>",
-        auth="public",
-        website=True,
-    )
-    def products_category(self, category, **kwargs):
-        category_name = f"Products of {category.name}"
-
-        products = (
-            request.env["product.template"]
-            .sudo()
-            .search([("categ_id", "=", category.id)])
-        )
-
-        return request.render(
-            "web_portal_ii.",
-            {
-                "products": products,
-                "category_name": category_name,
-            },
-        )

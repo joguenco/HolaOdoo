@@ -1,20 +1,31 @@
 <odoo>
-    <template id="products_web_portal" name="Products by Category">
+    <template id="products_category_web_portal" name="Products by Category">
         <t t-call="web.frontend_layout">
             <t t-set="title">
 				Products
-			</t>
+            </t>
             <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="/">Inicio</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            <t t-out="categorie_name" />
+                        </li>
+                    </ol>
+                </nav>
+
                 <h2 t-out="category_name" />
                 <table class="table">
                     <thead>
                         <tr>
                             <th>
 								Name
-							</th>
+                            </th>
                             <th>
 								Type
-							</th>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -26,13 +37,13 @@
                                 <td>
                                     <t t-if="product.type == 'consu'">
 										Goods
-									</t>
+                                    </t>
                                     <t t-if="product.type == 'service'">
 										Service
-									</t>
+                                    </t>
                                     <t t-if="product.type == 'combo'">
 										Combo
-									</t>
+                                    </t>
                                 </td>
                             </tr>
                         </t>

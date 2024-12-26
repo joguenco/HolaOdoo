@@ -10,7 +10,7 @@
     "data": [
         "security/ir.model.access.csv",
         "views/home.xml",
-        "views/products.xml",
+        "views/products_by_category.xml",
         "views/404.xml",
     ],
     "installable": True,
