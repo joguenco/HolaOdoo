@@ -11,5 +11,7 @@
         "security/ir.model.access.csv",
         "views/home_web_portal.xml",
         "views/404.xml",
+        "views/products_by_category_v1.xml",
+        "views/products_by_category_v2.xml",
     ],
 }

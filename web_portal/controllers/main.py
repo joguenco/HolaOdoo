@@ -37,7 +37,7 @@ class Main(Home):
             return request.render("web_portal.404", status=404)
 
         return request.render(
-            "web_portal.products_category_web_portal",
+            "web_portal.products_category_web_portal_v1",
             {
                 "products": products,
                 "category_name": category_name,
@@ -59,7 +59,7 @@ class Main(Home):
         )
 
         return request.render(
-            "web_portal.products_category_web_portal",
+            "web_portal.products_category_web_portal_v2",
             {
                 "products": products,
                 "category_name": category_name,
