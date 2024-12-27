@@ -19,17 +19,17 @@
                 </nav>
                 <h2 t-out="category.name" />
 
-                <t t-call="web_portal_ii.website_search_box_input">
+                <!-- <t t-call="web_portal_ii.website_search_box_input">
                     <t t-set="_classes" t-valuef="mt8" />
                     <t t-set="search_type" t-valuef="all" />
                     <t
                         t-set="action"
                         t-valuef="/hola/odoo/v2/products/category/{{slug(category)}}/search"
                     />
-                </t>
+                </t> -->
 
                 <div t-if="pager" class="o_portal_pager d-flex justify-content-center">
-                    <t t-call="web_portal_ii.pager" />
+                    <t t-call="portal.pager" />
                 </div>
                 <table class="table">
                     <thead>
@@ -67,9 +67,7 @@
         </t>
     </template>
 
-    <template id="pager" name="Pager" inherit_id="portal.pager" />
-
-    <template
+    <!-- <template
         id="website_search_box_input"
         inherit_id="web_portal_ii.website_search_box"
         primary="True"
@@ -135,5 +133,5 @@
                 </span>
             </button>
         </div>
-    </template>
+    </template> -->
 </odoo>
