@@ -3,32 +3,47 @@
         <t t-call="web.frontend_layout">
             <t t-set="title">Home</t>
 
-            <div class="container">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Name v2</th>
-                            <th>Parent</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+            <section class="py-5">
+                <div class="container px-4 px-lg-5 mt-5">
+                    <div
+                        class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center"
+                    >
                         <t t-foreach="categories" t-as="category">
-                            <tr>
-                                <td>
-                                    <a
-                                        t-attf-href="/hola/odoo/v2/products/category/{{slug(category)}}"
+                            <div class="col mb-5">
+                                <div class="card h-100">
+                                    <!-- Category image-->
+                                    <t t-if="category.image_1920">
+                                        <img
+                                            t-att-src="image_data_uri(category.image_1920)"
+                                            class="card-img-top"
+                                            alt="..."
+                                        />
+                                    </t>
+                                    <!-- Category details-->
+                                    <div class="card-body p-4">
+                                        <div class="text-center">
+                                            <h5
+                                                class="fw-bolder"
+                                                t-out="category.name"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="card-footer p-4 pt-0 border-top-0 bg-transparent"
                                     >
-                                        <span t-field="category.name" />
-                                    </a>
-                                </td>
-                                <td>
-                                    <t t-out="category.parent_id.name" />
-                                </td>
-                            </tr>
+                                        <div class="text-center">
+                                            <a
+                                                t-attf-href="/hola/odoo/v2/products/category/{{slug(category)}}"
+                                                class="btn btn-outline-primary"
+                                            >Show Products</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </t>
-                    </tbody>
-                </table>
-            </div>
+                    </div>
+                </div>
+            </section>
         </t>
     </template>
 </odoo>
