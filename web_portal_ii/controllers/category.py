@@ -37,6 +37,7 @@ class Category(Home):
             step=step,  # Number of items per page
         )
 
+        # Select the range of products to display
         products = products[(page - 1) * step : page * step]
 
         return request.render(
