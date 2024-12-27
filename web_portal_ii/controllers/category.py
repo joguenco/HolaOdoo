@@ -7,19 +7,21 @@ from odoo.addons.website.controllers.main import Home
 class Category(Home):
     @route(
         [
-            "/hola/odoo/v2/products/category/<model(product.category):category>/search",
             "/hola/odoo/v2/products/category/<model(product.category):category>",
             "/hola/odoo/v2/products/category/<model(product.category):category>/page/<int:page>",
         ],
         auth="public",
         website=True,
     )
-    def products_category(self, category, page=1, search="", **kwargs):
+    def products_category(self, category, page=1, search=None, order="", **kwargs):
         domain = [
             ("categ_id", "=", category.id),
             ("categ_id.is_published", "=", True),
             ("is_published", "=", True),
         ]
+
+        if search:
+            domain.append(("name", "ilike", search))
 
         products = request.env["product.template"].sudo().search(domain)
 
@@ -47,5 +49,6 @@ class Category(Home):
                 "category": category,
                 "pager": pager,
                 "total": total,
+                "search": search,
             },
         )

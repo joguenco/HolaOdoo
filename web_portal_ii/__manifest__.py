@@ -6,7 +6,7 @@
     "category": "website",
     "version": "18.0.1.0.0",
     "license": "AGPL-3",
-    "depends": ["stock", "portal", "product_categ_image"],
+    "depends": ["stock", "portal", "website", "product_categ_image"],
     "data": [
         "security/ir.model.access.csv",
         "views/home.xml",

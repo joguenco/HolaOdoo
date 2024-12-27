@@ -19,14 +19,17 @@
                 </nav>
                 <h2 t-out="category.name" />
 
-                <!-- <t t-call="web_portal_ii.website_search_box_input">
-                    <t t-set="_classes" t-valuef="mt8" />
-                    <t t-set="search_type" t-valuef="all" />
+                <t t-call="website.website_search_box_input">
+                    <t t-set="limit" t-valuef="0" />
+                    <t t-set="order_by" t-valuef="name asc" />
+                    <t t-set="placeholder">Search Products ...</t>
+                    <t t-set="search" t-valuef="{{search}}" />
+                    <t t-set="search_count" t-valuef="{{total}}" />
                     <t
                         t-set="action"
-                        t-valuef="/hola/odoo/v2/products/category/{{slug(category)}}/search"
+                        t-valuef="/hola/odoo/v2/products/category/{{slug(category)}}"
                     />
-                </t> -->
+                </t>
 
                 <div t-if="pager" class="o_portal_pager d-flex justify-content-center">
                     <t t-call="portal.pager" />
@@ -49,15 +52,7 @@
                                     <t t-out="product.name" />
                                 </td>
                                 <td>
-                                    <t t-if="product.type == 'consu'">
-										Goods
-									</t>
-                                    <t t-if="product.type == 'service'">
-										Service
-									</t>
-                                    <t t-if="product.type == 'combo'">
-										Combo
-									</t>
+                                    <t t-out="product.type" />
                                 </td>
                             </tr>
                         </t>
@@ -66,72 +61,4 @@
             </div>
         </t>
     </template>
-
-    <!-- <template
-        id="website_search_box_input"
-        inherit_id="web_portal_ii.website_search_box"
-        primary="True"
-    >
-        <xpath expr="//input[@name='search']" position="attributes">
-            <attribute name="t-att-data-search-type">search_type</attribute>
-            <attribute name="t-att-data-limit">limit or '5'</attribute>
-            <attribute
-                name="t-att-data-display-image"
-            >display_image or 'true'</attribute>
-            <attribute
-                name="t-att-data-display-description"
-            >display_description or 'true'</attribute>
-            <attribute
-                name="t-att-data-display-extra-link"
-            >display_extra_link or 'true'</attribute>
-            <attribute
-                name="t-att-data-display-detail"
-            >display_detail or 'true'</attribute>
-            <attribute name="t-att-data-order-by">order_by or 'name asc'</attribute>
-        </xpath>
-        <xpath expr="//div[@role='search']" position="attributes">
-            <attribute name="t-attf-class" remove="s_searchbar_input" separator=" " />
-        </xpath>
-        <xpath expr="//div[@role='search']" position="replace">
-            <form
-                t-attf-class="o_searchbar_form s_searchbar_input #{_form_classes}"
-                t-att-action="action"
-                method="get"
-                t-attf-data-snippet="s_searchbar_input"
-            >
-                <t>$0</t>
-                <input
-                    name="order"
-                    type="hidden"
-                    class="o_search_order_by"
-                    t-att-value="order_by if order_by else 'name asc'"
-                />
-                <t t-out="0" />
-            </form>
-        </xpath>
-    </template>
-
-    <template id="website_search_box" name="Website Searchbox">
-        <div t-attf-class="input-group #{_classes}" role="search">
-            <t t-set="search_placeholder">Search...</t>
-            <input
-                type="search"
-                name="search"
-                t-att-class="'search-query form-control oe_search_box %s %s' % (_input_classes or '', '' if default_style else 'border-0 bg-light')"
-                t-att-placeholder="placeholder if placeholder else search_placeholder"
-                t-att-value="search"
-            />
-            <button
-                type="submit"
-                t-att-class="'btn oe_search_button %s' % (_submit_classes or ('btn-primary' if default_style else 'btn-light'))"
-                aria-label="Search"
-                title="Search"
-            >
-                <i class="oi oi-search" />
-                <span t-if="search" class="oe_search_found">
-                    <small>(<t t-out="search_count or 0" /> found)</small>
-                </span>
-            </button>
-        </div>
-    </template> -->
 </odoo>
