@@ -13,7 +13,7 @@ class Category(Home):
         auth="public",
         website=True,
     )
-    def products_category(self, category, page=1, search=None, order="", **kwargs):
+    def products_category(self, category, page=1, search=None, **kwargs):
         domain = [
             ("categ_id", "=", category.id),
             ("categ_id.is_published", "=", True),
@@ -34,6 +34,7 @@ class Category(Home):
         step = 6
         pager = portal_pager(
             url=f"/hola/odoo/v2/products/category/{slug(category)}",
+            url_args={"search": search},
             total=total,
             page=page,
             step=step,  # Number of items per page
