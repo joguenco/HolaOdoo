@@ -17,6 +17,9 @@
                 </nav>
 
                 <h2 t-out="category_name" />
+                <div t-if="pager" class="o_portal_pager d-flex justify-content-center">
+                    <t t-call="web_portal_ii.pager" />
+                </div>
                 <table class="table">
                     <thead>
                         <tr>
@@ -52,4 +55,6 @@
             </div>
         </t>
     </template>
+
+    <template id="pager" name="Pager" inherit_id="portal.pager" />
 </odoo>
