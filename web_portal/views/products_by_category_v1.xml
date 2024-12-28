@@ -1,5 +1,5 @@
 <odoo>
-        <template id="products_category_web_portal_v1" name="Products by Category">
+    <template id="products_category_web_portal_v1" name="Products by Category">
         <t t-call="web.frontend_layout">
             <t t-set="title">Products</t>
 

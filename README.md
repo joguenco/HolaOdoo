@@ -72,6 +72,7 @@ odoo -c odoo.conf -i my_module --stop-after-init
 ```
 pip3 install inotify
 ```
+or
 ```
 pip install watchdog
 ```

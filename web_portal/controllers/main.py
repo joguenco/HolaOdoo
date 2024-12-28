@@ -50,8 +50,6 @@ class Main(Home):
         website=True,
     )
     def products_category_v2(self, category, **kwargs):
-        category_name = f"Products of {category.name}"
-
         products = (
             request.env["product.template"]
             .sudo()
@@ -62,6 +60,6 @@ class Main(Home):
             "web_portal.products_category_web_portal_v2",
             {
                 "products": products,
-                "category_name": category_name,
+                "category": category,
             },
         )

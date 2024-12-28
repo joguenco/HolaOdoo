@@ -1,10 +1,10 @@
 <odoo>
-        <template id="products_category_web_portal_v2" name="Products by Category">
+    <template id="products_category_web_portal_v2" name="Products by Category">
         <t t-call="web.frontend_layout">
             <t t-set="title">Products</t>
 
             <div class="container">
-                <h2 t-out="category_name" />
+                <h2 t-out="category.name" />
                 <table class="table">
                     <thead>
                         <tr>
