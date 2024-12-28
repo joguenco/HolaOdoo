@@ -1,5 +1,6 @@
 from odoo.http import request, route
 
+from odoo.addons.portal.controllers.portal import pager as portal_pager
 from odoo.addons.website.controllers.main import Home
 
 
@@ -45,21 +46,37 @@ class Main(Home):
         )
 
     @route(
-        "/hola/odoo/v2/products/category/<model(product.category):category>",
+        [
+            "/hola/odoo/v2/products/category/<model(product.category):category>",
+            "/hola/odoo/v2/products/category/<model(product.category):category>/page/<int:page>",
+        ],
         auth="public",
         website=True,
     )
-    def products_category_v2(self, category, **kwargs):
+    def products_category_v2(self, category, page=1, **kwargs):
         products = (
             request.env["product.template"]
             .sudo()
             .search([("categ_id", "=", category.id)])
         )
 
+        total = len(products)
+        slug = request.env["ir.http"]._slug
+        step = 6
+        pager = portal_pager(
+            url=f"/hola/odoo/v2/products/category/{slug(category)}",
+            total=total,
+            page=page,
+            step=step,
+        )
+
+        products = products[(page - 1) * step : page * step]
+
         return request.render(
             "web_portal.products_category_web_portal_v2",
             {
                 "products": products,
                 "category": category,
+                "pager": pager,
             },
         )

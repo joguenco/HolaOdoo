@@ -5,6 +5,7 @@
 
             <div class="container">
                 <h2 t-out="category.name" />
+
                 <table class="table">
                     <thead>
                         <tr>
@@ -33,6 +34,10 @@
                         </t>
                     </tbody>
                 </table>
+
+                <div t-if="pager" class="o_portal_pager d-flex justify-content-center">
+                    <t t-call="portal.pager" />
+                </div>
             </div>
         </t>
     </template>
