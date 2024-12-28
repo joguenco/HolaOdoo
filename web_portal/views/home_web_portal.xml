@@ -10,8 +10,8 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Name v1</th>
-                            <th>Name v2</th>
+                            <th>Simple v1</th>
+                            <th>Pagination v2</th>
                             <th>Parent</th>
                         </tr>
                     </thead>
