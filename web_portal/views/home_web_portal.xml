@@ -12,6 +12,7 @@
                         <tr>
                             <th>Simple v1</th>
                             <th>Pagination v2</th>
+                            <th>Search v3</th>
                             <th>Parent</th>
                         </tr>
                     </thead>
@@ -28,6 +29,13 @@
                                 <td>
                                     <a
                                         t-attf-href="/hola/odoo/v2/products/category/{{slug(category)}}"
+                                    >
+                                        <span t-field="category.name" />
+                                    </a>
+                                </td>
+                                <td>
+                                    <a
+                                        t-attf-href="/hola/odoo/v3/products/category/{{slug(category)}}"
                                     >
                                         <span t-field="category.name" />
                                     </a>

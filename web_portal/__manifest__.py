@@ -13,5 +13,6 @@
         "views/404.xml",
         "views/products_by_category_v1.xml",
         "views/products_by_category_v2.xml",
+        "views/products_by_category_v3.xml",
     ],
 }

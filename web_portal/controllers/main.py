@@ -80,3 +80,39 @@ class Main(Home):
                 "pager": pager,
             },
         )
+
+    @route(
+        [
+            "/hola/odoo/v3/products/category/<model(product.category):category>",
+            "/hola/odoo/v3/products/category/<model(product.category):category>/page/<int:page>",
+        ],
+        auth="public",
+        website=True,
+    )
+    def products_category_v3(self, category, page=1, **kwargs):
+        products = (
+            request.env["product.template"]
+            .sudo()
+            .search([("categ_id", "=", category.id)])
+        )
+
+        total = len(products)
+        slug = request.env["ir.http"]._slug
+        step = 6
+        pager = portal_pager(
+            url=f"/hola/odoo/v3/products/category/{slug(category)}",
+            total=total,
+            page=page,
+            step=step,
+        )
+
+        products = products[(page - 1) * step : page * step]
+
+        return request.render(
+            "web_portal.products_category_web_portal_v3",
+            {
+                "products": products,
+                "category": category,
+                "pager": pager,
+            },
+        )

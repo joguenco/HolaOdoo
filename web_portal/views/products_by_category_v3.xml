@@ -1,0 +1,44 @@
+<odoo>
+    <template id="products_category_web_portal_v3" name="Products by Category">
+        <t t-call="web.frontend_layout">
+            <t t-set="title">Products</t>
+
+            <div class="container">
+                <h2 t-out="category.name" />
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="products" t-as="product">
+                            <tr>
+                                <td>
+                                    <t t-out="product.name" />
+                                </td>
+                                <td>
+                                    <t t-if="product.type == 'consu'">
+                                        Goods
+                                    </t>
+                                    <t t-if="product.type == 'service'">
+                                        Service
+                                    </t>
+                                    <t t-if="product.type == 'combo'">
+                                        Combo
+                                    </t>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+
+                <div t-if="pager" class="o_portal_pager d-flex justify-content-center">
+                    <t t-call="portal.pager" />
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>
