@@ -6,6 +6,17 @@
             <div class="container">
                 <h2 t-out="category.name" />
 
+                <t t-call="website.website_search_box_input">
+                    <t t-set="limit" t-valuef="0" />
+                    <t t-set="placeholder" t-valuef="Search Products ..." />
+                    <t t-set="search" t-valuef="{{search}}" />
+                    <t t-set="search_count" t-valuef="{{total}}" />
+                    <t
+                        t-set="action"
+                        t-valuef="/hola/odoo/v3/products/category/{{slug(category)}}"
+                    />
+                </t>
+
                 <table class="table">
                     <thead>
                         <tr>
