@@ -9,14 +9,12 @@
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
                             <a href="/">
-								Inicio
-							</a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">
-                            <t t-out="categorie_name" />
+                                <i class="fa fa-home" />
+                            </a>
                         </li>
                     </ol>
                 </nav>
+
                 <h2 t-out="category.name" />
 
                 <t t-call="website.website_search_box_input">
@@ -30,9 +28,6 @@
                     />
                 </t>
 
-                <div t-if="pager" class="o_portal_pager d-flex justify-content-center">
-                    <t t-call="portal.pager" />
-                </div>
                 <table class="table">
                     <thead>
                         <tr>
@@ -57,6 +52,10 @@
                         </t>
                     </tbody>
                 </table>
+
+                <div t-if="pager" class="o_portal_pager d-flex justify-content-center">
+                    <t t-call="portal.pager" />
+                </div>
             </div>
         </t>
     </template>
