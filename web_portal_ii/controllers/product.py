@@ -5,21 +5,17 @@ from odoo.addons.website.controllers.main import Home
 
 class Product(Home):
     @route(
-        "/hola/odoo/v1/products/product/<int:product_id>", auth="public", website=True
+        "/hola/odoo/v1/products/product/<model(product.template):product>",
+        auth="public",
+        website=True,
     )
-    def product(self, product_id, **kwargs):
-        result = (
-            request.env["product.template"]
-            .sudo()
-            .search([("id", "=", product_id), ("is_published", "=", True)])
-        )
-
-        if result:
+    def product(self, product, **kwargs):
+        if product.is_published:
             return request.render(
-                "web_portal.product_web_portal",
+                "web_portal_ii.product_web_portal",
                 {
-                    "product": result[0],
+                    "product": product,
                 },
             )
         else:
-            return request.render("web_portal.404", status=404)
+            return request.render("web_portal_ii.404", status=404)

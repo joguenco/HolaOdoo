@@ -12,6 +12,9 @@
                                 <i class="fa fa-home" />
                             </a>
                         </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Categories
+                        </li>
                     </ol>
                 </nav>
 
@@ -43,7 +46,11 @@
                         <t t-foreach="products" t-as="product">
                             <tr>
                                 <td>
-                                    <t t-out="product.name" />
+                                    <a
+                                        t-attf-href="/hola/odoo/v1/products/product/{{product.id}}"
+                                    >
+                                        <t t-out="product.name" />
+                                    </a>
                                 </td>
                                 <td>
                                     <t t-out="product.type" />
