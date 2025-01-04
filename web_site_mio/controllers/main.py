@@ -11,9 +11,7 @@ class Main(Home):
         Category = request.env["product.public.category"]
         categories = Category.sudo().search([("is_published", "=", True)])
 
-        res = request.render(
+        return request.render(
             "web_site_mio.home_web_portal",
             {"categories": categories},
         )
-
-        return res

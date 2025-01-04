@@ -1,0 +1,104 @@
+<odoo>
+    <template id="product_web_portal" name="Product">
+        <t t-call="web.frontend_layout">
+            <t t-set="title">
+				Producto
+            </t>
+            <div class="container">
+                <br />
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="/">Inicio</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <t
+                                    t-foreach="product.public_categ_ids"
+                                    t-as="category"
+                                >                                
+                                <a
+                                    t-attf-href="/hola/odoo/v1/products/category/{{slug(category)}}"
+                                >
+                                    <t t-out="category.name" />
+                                </a>
+                            </t>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            <t t-out="product.name" />
+                        </li>
+                    </ol>
+                </nav>
+                <br />
+            </div>
+            <div
+                class="parent container d-flex justify-content-center align-items-center h-100"
+            >
+                <div class="card" style="width: 27rem;">
+                    <div class="card-header">
+                        <img
+                            t-attf-src="data:image/png;base64,{{product.image_1920}}"
+                            class="card-img"
+                            style="max-height:100%;max-width:100%"
+                        />
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <t t-out="product.name" />
+                        </h5>
+                        <p class="card-text">
+                            <t t-out="product.description" />
+                        </p>
+
+                        <t t-if="product.pdf_attachment_name">
+                            <a
+                                t-attf-href="data:application/pdf;base64,{{product.pdf_attachment}}"
+                                t-att-download="product.name"
+                                class="btn btn-danger"
+                            >PDF</a>
+                        </t>
+                    </div>
+
+                    <t t-if="product.attribute_line_ids">
+                        <div class="card-footer">
+                            <small class="text-muted" />
+                        </div>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Propiedad</th>
+                                    <th scope="col">Valor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t
+                                    t-foreach="product.attribute_line_ids"
+                                    t-as="attribute"
+                                >
+                                    <tr>
+                                        <td>
+                                            <t t-out="attribute.attribute_id.name" />
+                                        </td>
+                                        <td>
+                                            <t
+                                                t-foreach="attribute.value_ids"
+                                                t-as="value"
+                                            >
+                                                <span
+                                                    class="badge rounded-pill text-bg-secondary"
+                                                >
+                                                    <t t-out="value.name" />
+                                                </span>
+                                            </t>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </t>
+                </div>
+            </div>
+            <br />
+        </t>
+    </template>
+</odoo>

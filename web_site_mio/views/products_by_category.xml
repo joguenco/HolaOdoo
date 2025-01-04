@@ -1,0 +1,69 @@
+<odoo>
+    <template id="products_by_category_mio" name="Products by Category">
+        <t t-call="web.frontend_layout">
+            <t t-set="title">
+				Products
+			</t>
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="/">
+                                <i class="fa fa-home" />
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            Categories
+                        </li>
+                    </ol>
+                </nav>
+
+                <h2 t-out="category.name" />
+
+                <t t-call="website.website_search_box_input">
+                    <t t-set="limit" t-valuef="0" />
+                    <t t-set="placeholder">Search Products ...</t>
+                    <t t-set="search" t-valuef="{{search}}" />
+                    <t t-set="search_count" t-valuef="{{total}}" />
+                    <t
+                        t-set="action"
+                        t-valuef="/hola/odoo/v1/products/category/{{slug(category)}}"
+                    />
+                </t>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+								Name
+							</th>
+                            <th>
+								Type
+							</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="products" t-as="product">
+                            <tr>
+                                <td>
+                                    <a
+                                        t-attf-href="/hola/odoo/v1/products/product/{{product.id}}"
+                                    >
+                                        <t t-out="product.name" />
+                                    </a>
+                                </td>
+                                <td>
+                                    <t t-out="product.type" />
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+
+                <div t-if="pager" class="o_portal_pager d-flex justify-content-center">
+                    <t t-call="portal.pager" />
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

@@ -1,3 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from . import main
+from . import category
+from . import product
