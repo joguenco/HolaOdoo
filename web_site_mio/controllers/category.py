@@ -14,7 +14,6 @@ class Category(Home):
         website=True,
     )
     def products_category(self, category, page=1, search=None, **kwargs):
-
         domain = [
             ("public_categ_ids", "in", category.id),
             ("is_published", "=", True),

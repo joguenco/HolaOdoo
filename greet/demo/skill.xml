@@ -1,0 +1,13 @@
+<odoo noupdate="1">
+    <record id="greet_skill_developer" model="greet.skill">
+        <field name="name">Developer</field>
+    </record>
+
+    <record id="greet_skill_engineer" model="greet.skill">
+        <field name="name">Engineer</field>
+    </record>
+
+    <record id="greet_skill_doctor" model="greet.skill">
+        <field name="name">Doctor</field>
+    </record>
+</odoo>

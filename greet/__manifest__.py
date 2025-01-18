@@ -15,10 +15,12 @@
         "views/greet_friend.xml",
         "views/greet_report.xml",
         "views/greet_me.xml",
+        "views/greet_skill.xml",
         "views/greet_menu.xml",
     ],
     "demo": [
         "demo/friend.xml",
+        "demo/skill.xml",
     ],
     "installable": True,
     "application": True,

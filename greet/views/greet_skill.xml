@@ -1,0 +1,7 @@
+<odoo>
+    <record id="action_res_skill" model="ir.actions.act_window">
+        <field name="name">Skill</field>
+        <field name="res_model">greet.skill</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>
